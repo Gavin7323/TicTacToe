@@ -70,7 +70,7 @@ class MainActivity : AppCompatActivity() {
     private fun handleWin() {
         TODO("Not yet implemented")
         TODO("Create a TextView variable called winLoseText and get from findViewById(R.id.winLose) ")
-        TODO("set the text of winLoseText to "$currentMove Wins!"")
+//        TODO("set the text of winLoseText to ""$currentMove Wins!")
     }
 
     fun topLeftClick(view: View) {
