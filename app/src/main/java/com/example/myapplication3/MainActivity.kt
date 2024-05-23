@@ -40,44 +40,69 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun checkForWin(): Boolean {
-        TODO("Not yet implemented")
-        var textArray : Array<CharSequence>
+        var textArray : Array<CharSequence> = arrayOf(
+            findViewById<TextView>(R.id.textView0).text,
+            findViewById<TextView>(R.id.textView1).text,
+            findViewById<TextView>(R.id.textView2).text,
+            findViewById<TextView>(R.id.textView3).text,
+            findViewById<TextView>(R.id.textView4).text,
+            findViewById<TextView>(R.id.textView5).text,
+            findViewById<TextView>(R.id.textView6).text,
+            findViewById<TextView>(R.id.textView7).text,
+            findViewById<TextView>(R.id.textView8).text
+        )
 
         return checkRowForWin(textArray) || checkColForWin(textArray) || checkLeftDiagForWin(textArray) || checkRightDiagForWin(textArray)
     }
 
     private fun checkRightDiagForWin(textArray: Array<CharSequence>): Boolean {
-        TODO("Not yet implemented")
+        if(textArray[2] == textArray[4] && textArray[4] == textArray[6]){
+            if (textArray[2] != ""){
+                return true
+            }
+        }
     }
 
     private fun checkLeftDiagForWin(textArray: Array<CharSequence>): Boolean {
-        TODO("Not yet implemented")
+        if(textArray[0] == textArray[4] && textArray[4] == textArray[8]){
+            if (textArray[0] != ""){
+                return true
+            }
+        }
     }
 
     private fun checkColForWin(textArray: Array<CharSequence>): Boolean {
-        TODO("Not yet implemented")
+        for(col in 0..2){
+            if(textArray[col + 0] == textArray[col + 3] && textArray[col + 3] == textArray[col + 6]){
+                if(textArray[col + 0] != ""){
+                    return true
+                }
+            }
+        }
+        return false
     }
 
     private fun checkRowForWin(textArray: Array<CharSequence>): Boolean {
         for(row in 0..2){
             if(textArray[3 * row + 0] == textArray[3 * row + 1] && textArray[3 * row + 1] == textArray[3 * row + 2]){
-                return true
+                if (textArray[3 * row + 0] != ""){
+                     return true
+                }
             }
         }
         return false
     }
 
     private fun handleWin() {
-        TODO("Not yet implemented")
-        TODO("Create a TextView variable called winLoseText and get from findViewById(R.id.winLose) ")
-//        TODO("set the text of winLoseText to ""$currentMove Wins!")
+        val winLoseText : TextView = findViewById<TextView>(R.id.textView9);
+        winLoseText.text = "$currentMove Wins!"
     }
 
     fun topLeftClick(view: View) {
         val textView : TextView = findViewById(R.id.textView0)
         if (textView.text == ""){
             textView.text = currentMove
-            changeCurrentMove()
+            handleMove()
         }
     }
 
@@ -85,7 +110,64 @@ class MainActivity : AppCompatActivity() {
         val textView : TextView = findViewById(R.id.textView1)
         if (textView.text == ""){
             textView.text = currentMove
-            changeCurrentMove()
+            handleMove()
         }
     }
+
+    fun topRightClick(view: View) {
+        val textView : TextView = findViewById(R.id.textView1)
+        if (textView.text == ""){
+            textView.text = currentMove
+            handleMove()
+        }
+    }
+
+    fun middleLeftClick(view: View) {
+        val textView : TextView = findViewById(R.id.textView1)
+        if (textView.text == ""){
+            textView.text = currentMove
+            handleMove()
+        }
+    }
+
+    fun middleCenterClick(view: View) {
+        val textView : TextView = findViewById(R.id.textView1)
+        if (textView.text == ""){
+            textView.text = currentMove
+            handleMove()
+        }
+    }
+
+    fun middleRightClick(view: View) {
+        val textView : TextView = findViewById(R.id.textView1)
+        if (textView.text == ""){
+            textView.text = currentMove
+            handleMove()
+        }
+    }
+
+    fun bottomLeftClick(view: View) {
+        val textView : TextView = findViewById(R.id.textView1)
+        if (textView.text == ""){
+            textView.text = currentMove
+            handleMove()
+        }
+    }
+
+    fun bottomCenterClick(view: View) {
+        val textView : TextView = findViewById(R.id.textView1)
+        if (textView.text == ""){
+            textView.text = currentMove
+            handleMove()
+        }
+    }
+
+    fun bottomRightClick(view: View) {
+        val textView : TextView = findViewById(R.id.textView1)
+        if (textView.text == ""){
+            textView.text = currentMove
+            handleMove()
+        }
+    }
+
 }
